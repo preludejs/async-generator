@@ -3,8 +3,12 @@ import interval from './interval.js'
 import map from './map.js'
 import of from './of.js'
 import take from './take.js'
+import compact from './compact.js'
+import array from './array.js'
 
 export {
+  array,
+  compact,
   consume,
   interval,
   map,
