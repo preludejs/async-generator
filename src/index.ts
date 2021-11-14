@@ -6,6 +6,7 @@ import interval from './interval.js'
 import map from './map.js'
 import of from './of.js'
 import ofPromise from './of-promise.js'
+import ofThunk from './of-thunk.js'
 import take from './take.js'
 
 export * from './prelude.js'
@@ -19,5 +20,6 @@ export {
   map,
   of,
   ofPromise,
+  ofThunk,
   take
 }
