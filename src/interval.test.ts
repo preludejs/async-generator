@@ -1,4 +1,4 @@
-import * as G from '../cjs/index.js'
+import * as G from './index.js'
 
 test('interval', async () => {
   const r: [string, number][] = []

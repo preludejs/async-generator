@@ -1,4 +1,4 @@
-import * as G from '../cjs/index.js'
+import * as G from './index.js'
 
 test('take without return', async () => {
   const g = G.of([ 1, 2, 3, 4, 5, 6, 7 ])
