@@ -1,10 +1,11 @@
+/** @returns an array of collected values. */
 const array =
-  async <T>(g: AsyncIterable<T>): Promise<T[]> => {
-    const _s: T[] = []
-    for await (const _ of g) {
-      _s.push(_)
+  async <T>(values: AsyncIterable<T>): Promise<T[]> => {
+    const result: T[] = []
+    for await (const value of values) {
+      result.push(value)
     }
-    return _s
+    return result
   }
 
 export default array
