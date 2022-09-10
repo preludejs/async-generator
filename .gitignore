@@ -2,3 +2,6 @@
 node_modules
 mjs
 cjs
+configurationCache.log
+dryrun.log
+targets.log
