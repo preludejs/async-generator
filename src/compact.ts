@@ -1,9 +1,11 @@
+/** @yields non-nullish values. */
 const compact =
-  async function *<T>(g: AsyncIterable<T>): AsyncGenerator<NonNullable<T>> {
-    for await (const _ of g) {
-      if (_ != null) {
-        yield _ as unknown as NonNullable<T>
+  async function *<T>(values: AsyncIterable<T>): AsyncGenerator<NonNullable<T>> {
+    for await (const value of values) {
+      if (value == null) {
+        continue
       }
+      yield value as unknown as NonNullable<T>
     }
   }
 
