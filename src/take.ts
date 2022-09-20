@@ -1,30 +1,19 @@
-const take =
-  async function *<T>(
-    n: number,
-    g: AsyncIterable<T>,
-    { return: return_ = true }: { return?: boolean } = {}
-  ): AsyncGenerator<T> {
-    const g_ = g[Symbol.asyncIterator]()
-    let _: undefined | IteratorResult<T>
-    const maybeReturn =
-      async () => {
-        if (return_ && !_?.done) {
-          await g_.return?.()
+/** @yields n values. */
+export const take =
+  (n: number) => {
+    if (!Number.isSafeInteger(n)) {
+      throw new Error(`Expected number of elements to take to be a safe integer, got ${n}.`)
+    }
+    return async function* <T>(values: AsyncIterable<T>) {
+      if (n <= 0) {
+        return
+      }
+      let index = 0
+      for await (const value of values) {
+        yield value
+        if (++index >= n) {
+          break
         }
       }
-    for (let i = 0; i < n; i++) {
-      _ = await g_.next()
-      if (_.done) {
-        break
-      }
-      try {
-        yield _.value
-      } catch (err: unknown) {
-        await maybeReturn()
-        throw err
-      }
     }
-    await maybeReturn()
   }
-
-export default take

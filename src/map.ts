@@ -1,9 +1,19 @@
-const map =
-  async function *<T, R>(g: AsyncIterable<T>, f: (value: T, index: number) => Promise<R>): AsyncGenerator<R> {
-    let i = 0
-    for await (const _ of g) {
-      yield await f(_, i++)
-    }
-  }
+import * as Ch from '@prelude/channel'
 
-export default map
+export const map =
+  <T, U>(f: (value: T, index: number, worker: number) => Promise<U>, { concurrency = 1 }: { concurrency?: number } = {}) =>
+    async function* (values: AsyncIterable<T>) {
+      let index = 0
+      const input = Ch.ofAsyncIterable<T>(values)
+      const output = Ch.of<U>()
+      Promise
+        .allSettled(Array.from({ length: concurrency }, async (_, worker) => {
+          for await (const value of input) {
+            await Ch.write(output, await f(value, index++, worker))
+          }
+        }))
+        .finally(() => {
+          output.done = true
+        })
+      yield* output
+    }

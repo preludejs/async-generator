@@ -1,5 +1,5 @@
 /** @yields non-nullish values. */
-const compact =
+export const compact =
   async function *<T>(values: AsyncIterable<T>): AsyncGenerator<NonNullable<T>> {
     for await (const value of values) {
       if (value == null) {
@@ -8,5 +8,3 @@ const compact =
       yield value as unknown as NonNullable<T>
     }
   }
-
-export default compact

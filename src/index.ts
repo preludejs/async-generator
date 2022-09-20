@@ -1,25 +1,20 @@
-import array from './array.js'
-import chain from './chain.js'
-import compact from './compact.js'
-import consume from './consume.js'
-import interval from './interval.js'
-import map from './map.js'
-import of from './of.js'
-import ofPromise from './of-promise.js'
-import ofThunk from './of-thunk.js'
-import take from './take.js'
-
+export * from './array.js'
+export * from './cargo.js'
+export * from './compact.js'
+export * from './concat.js'
+export * from './consume.js'
+export * from './cycle.js'
+export * from './every.js'
+export * from './map.js'
+export * from './of-interval.js'
+export * from './of-iterable.js'
+export * from './of-next.js'
+export * from './ordered.js'
+export * from './pipe.js'
 export * from './prelude.js'
-
-export {
-  array,
-  chain,
-  compact,
-  consume,
-  interval,
-  map,
-  of,
-  ofPromise,
-  ofThunk,
-  take
-}
+export * from './skip.js'
+export * from './some.js'
+export * from './step.js'
+export * from './take.js'
+export * from './window.js'
+export * from './with-index.js'
