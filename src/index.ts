@@ -1,4 +1,5 @@
 export * from './array.js'
+export * from './assign.js'
 export * from './cargo.js'
 export * from './compact.js'
 export * from './concat.js'
