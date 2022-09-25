@@ -1,4 +1,5 @@
 export * from './append.js'
+export * from './are-unique.js'
 export * from './array.js'
 export * from './assign.js'
 export * from './cargo.js'
