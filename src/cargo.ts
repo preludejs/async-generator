@@ -10,8 +10,8 @@ export function cargo<T>(max = Infinity) {
       if (result.done) {
         break
       }
-      const values = [ result.value, ...producer.consumeWrites() ]
-      while (producer.pendingWrites > 0) {
+      const values = [ result.value ]
+      while (producer.pendingWrites > 0 && values.length < max) {
         values.push(producer.consumeWrite())
       }
       if (consumer.done) {
