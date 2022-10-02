@@ -1,6 +1,8 @@
+import type { AnyPredicate, Consumer } from './prelude'
+
 /** @returns `true` if all elements are passing provided predicate, `false` otherwise. */
-export function every<T>(predicate: (value: T, index: number) => boolean | Promise<boolean>) {
-  return async function (values: AsyncIterable<T>) {
+export function every<T>(predicate: AnyPredicate<T>): Consumer<T, boolean> {
+  return async function (values) {
     let index = 0
     for await (const value of values) {
       if (!await Promise.resolve(predicate(value, index++))) {
