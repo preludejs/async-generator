@@ -1,4 +1,4 @@
-import type { AnyPredicate, Consumer } from './prelude'
+import type { AnyPredicate, Consumer } from './prelude.js'
 
 /** @returns `true` if all elements are passing provided predicate, `false` otherwise. */
 export function every<T>(predicate: AnyPredicate<T>): Consumer<T, boolean> {

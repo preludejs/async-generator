@@ -1,4 +1,4 @@
-import type { Transformer } from './prelude'
+import type { Transformer } from './prelude.js'
 
 /** @returns transformer cycling through values n times (defaults to infinity). */
 export function cycle<T>(n = Infinity): Transformer<T> {

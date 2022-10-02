@@ -1,4 +1,4 @@
-import type { Transformer } from './prelude'
+import type { Transformer } from './prelude.js'
 
 function sleep(milliseconds: number) {
   return new Promise(resolve => setTimeout(resolve, milliseconds))
