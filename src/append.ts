@@ -1,6 +1,8 @@
+import type { Transformer } from './prelude.js'
+
 /** Appends provided values. */
-export function append<T, U>(appendValues: Iterable<U> | AsyncIterable<U>) {
-  return async function* (values: AsyncIterable<T>): AsyncGenerator<T | U> {
+export function append<T, U>(appendValues: Iterable<U> | AsyncIterable<U>): Transformer<T, T | U> {
+  return async function* (values) {
     for await (const value of values) {
       yield value
     }
