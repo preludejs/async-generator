@@ -4,12 +4,7 @@ function sleep(milliseconds: number) {
   return new Promise(resolve => setTimeout(resolve, milliseconds))
 }
 
-/**
- * Jitters values in time.
- *
- * @param jitter_ The jitter in milliseconds.
- *
- * */
+/** Jitters values in time. */
 export function jitter<T>(jitter_: number, delay = 0): Transformer<T> {
   return async function* (values) {
     for await (const value of values) {

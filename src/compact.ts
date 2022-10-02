@@ -1,4 +1,4 @@
-/** @yields non-nullish values. */
+/** Transformer filtering out nullish values. */
 export async function* compact<T>(values: AsyncIterable<T>): AsyncGenerator<NonNullable<T>> {
   for await (const value of values) {
     if (value == null) {

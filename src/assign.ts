@@ -1,7 +1,8 @@
 import { map } from './map.js'
+import type { Transformer } from './prelude.js'
 
-/** Performs `Object.assign(...)` on values. */
-export function assign<T extends {}, U>(f: (value: T, index: number) => U) {
+/** @returns transformer mutating values by assigning result of function. */
+export function assign<T extends {}, U>(f: (value: T, index: number) => U): Transformer<T, T & U> {
   return map<T, T & U>(async function (value, index) {
     return Object.assign(value, await Promise.resolve(f(value, index)))
   })
