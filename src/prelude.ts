@@ -16,3 +16,20 @@ export type AsyncPredicate<T> =
 export type TypePredicate<T, U extends T> =
   (value: T, index: number) =>
     value is U
+
+export type AnyPredicate<T> =
+  | Predicate<T>
+  | AsyncPredicate<T>
+  | TypePredicate<T, any>
+
+export type Producer<T> =
+  () =>
+    AsyncGenerator<T>
+
+export type Transformer<T, R = T> =
+  (values: AsyncIterable<T>) =>
+    AsyncGenerator<R>
+
+export type Consumer<T, R> =
+  (values: AsyncIterable<T>) =>
+    Promise<R>
