@@ -1,11 +1,13 @@
-/** Consumes values using optional callback with specified concurrency. */
+import type { Consumer } from './prelude.js'
+
+/** @returns consumer without return value. */
 export function consume<T>(
   callback?: (value: T, index: number, worker: number) => unknown | Promise<unknown>,
   { concurrency = 1 }: { concurrency?: number } = {}
-) {
-  return async function (values: AsyncIterable<T>) {
+): Consumer<T, void> {
+  return async function (values) {
     let index = 0
-    return Promise.allSettled(Array.from({ length: concurrency }, async (_, worker) => {
+    await Promise.all(Array.from({ length: concurrency }, async (_, worker) => {
       for await (const value of values) {
         if (callback) {
           await Promise.resolve(callback(value, index++, worker))
