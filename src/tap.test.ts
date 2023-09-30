@@ -6,7 +6,7 @@ test('concurrent', async () => {
   await expect(G.pipe(
     G.ofInterval(100),
     G.tap(async () => {
-      await sleep(Math.random() * 10)
+      await sleep(Math.random() * 10) // NOSONAR
       taps++
     }, { concurrency: 10 }),
     G.map(_ => _.index),
