@@ -11,6 +11,7 @@ export function window<T>(n: number, yieldsShorter = false) {
       switch (range.push(value)) {
         case n + 1:
           range.shift()
+          // fallthrough
         case n:
           yield range.slice()
       }
