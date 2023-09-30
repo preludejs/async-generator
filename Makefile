@@ -1,5 +1,5 @@
 test:
-	pnpm exec jest
+	pnpm exec jest --coverage
 
 clean:
 	rm -Rf cjs mjs test/*.js
