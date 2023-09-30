@@ -2,7 +2,7 @@ import type { Consumer } from './prelude.js'
 
 /** @returns consumer without return value. */
 export function consume<T>(
-  callback?: (value: T, index: number, worker: number) => unknown | Promise<unknown>,
+  callback?: (value: T, index: number, worker: number) => unknown,
   { concurrency = 1 }: { concurrency?: number } = {}
 ): Consumer<T, void> {
   return async function (values) {
