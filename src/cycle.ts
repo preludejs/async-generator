@@ -1,11 +1,17 @@
 import type { Transformer } from './prelude.js'
 
+async function* cycleZero(values: AsyncIterable<unknown>) {
+  for await (const _value of values) {
+    return
+  }
+}
+
 /** @returns transformer cycling through values n times (defaults to infinity). */
 export function cycle<T>(n = Infinity): Transformer<T> {
   if (n <= 0) {
-    return async function* innerCycleNoop() {}
+    return cycleZero
   }
-  return async function* innerCycle(values) {
+  return async function* (values) {
     const seen: T[] = []
     for await (const value of values) {
       seen.push(value)

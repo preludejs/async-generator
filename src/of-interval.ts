@@ -1,7 +1,7 @@
 import * as Ch from '@prelude/channel'
 
 /** @yields values periodically every milliseconds interval. */
-export async function* ofInterval(milliseconds: number) {
+export async function* ofInterval(milliseconds: number): AsyncGenerator<{ generatedAt: Date, yieldedAt: Date, index: number }> {
   const ch = Ch.of<Date>(Infinity)
   const intervalId =
     setInterval(() => {
