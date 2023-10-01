@@ -14,3 +14,5 @@ export async function* unwrapIndexed<T>(values: AsyncIterable<{ value: T, index:
     throw new Error(`Invalid 0-based indices, didn't see index ${j}.`)
   }
 }
+
+export default unwrapIndexed

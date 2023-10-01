@@ -5,3 +5,5 @@ export async function* withIndex<T>(values: AsyncIterable<T>): AsyncGenerator<{ 
     yield { value, index: index++ }
   }
 }
+
+export default withIndex

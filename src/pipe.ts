@@ -29,3 +29,5 @@ export function pipe<A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y>(a: A, b:
 export function pipe(g: unknown, ...gs: (Z<unknown, unknown>)[]): unknown {
   return gs.reduce((r, _) => _(r), g)
 }
+
+export default pipe
