@@ -1,5 +1,17 @@
 # Async generator module
 
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=preludejs_async-generator&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=preludejs_async-generator)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=preludejs_async-generator&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=preludejs_async-generator)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=preludejs_async-generator&metric=bugs)](https://sonarcloud.io/summary/new_code?id=preludejs_async-generator)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=preludejs_async-generator&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=preludejs_async-generator)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=preludejs_async-generator&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=preludejs_async-generator)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=preludejs_async-generator&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=preludejs_async-generator)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=preludejs_async-generator&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=preludejs_async-generator)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=preludejs_async-generator&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=preludejs_async-generator)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=preludejs_async-generator&metric=coverage)](https://sonarcloud.io/summary/new_code?id=preludejs_async-generator)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=preludejs_async-generator&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=preludejs_async-generator)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=preludejs_async-generator&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=preludejs_async-generator)
+
 # Usage
 
 ```bash
