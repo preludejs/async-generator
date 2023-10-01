@@ -1,5 +1,5 @@
-import { sleep } from './test/sleep.js'
 import * as G from './index.js'
+import sleep from './sleep.js'
 
 test('concurrent', async () => {
   let taps = 0
