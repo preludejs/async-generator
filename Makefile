@@ -1,5 +1,5 @@
 test:
-	pnpm exec jest --coverage
+	pnpm t
 
 clean:
 	rm -Rf cjs mjs test/*.js
@@ -25,6 +25,6 @@ preversion: test rebuild
 postversion:
 	git push
 	git push --tags
-	pnpm publish
+	pnpm publish --access public
 
 .PHONY: test

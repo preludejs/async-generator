@@ -1,8 +1,8 @@
 *.js
-node_modules
-mjs
 cjs
 configurationCache.log
-dryrun.log
-targets.log
 coverage
+dryrun.log
+mjs
+node_modules
+targets.log
