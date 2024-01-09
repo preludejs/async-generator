@@ -5,7 +5,7 @@ export async function* ofInterval(milliseconds: number): AsyncGenerator<{ genera
   const ch = Ch.of<Date>(Infinity)
   const intervalId =
     setInterval(() => {
-      if (ch.done) {
+      if (ch.doneWriting) {
         clearInterval(intervalId)
         return
       }
@@ -18,6 +18,8 @@ export async function* ofInterval(milliseconds: number): AsyncGenerator<{ genera
     }
   } finally {
     clearInterval(intervalId)
-    ch.close()
+    if (!ch.doneWriting) {
+      ch.closeWriting()
+    }
   }
 }
