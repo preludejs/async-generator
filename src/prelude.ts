@@ -33,3 +33,8 @@ export type Transformer<T, R = T> =
 export type Consumer<T, R> =
   (values: AsyncIterable<T>) =>
     Promise<R>
+
+export type Defined<T> =
+  T extends undefined ?
+    never :
+    T
