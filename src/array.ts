@@ -6,3 +6,5 @@ export async function array<T>(values: AsyncIterable<T>) {
   }
   return result
 }
+
+export default array
