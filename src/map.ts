@@ -28,6 +28,9 @@ function unordered<T, U>(f: F<T, U>, concurrency: number) {
       .finally(() => {
         output.closeWriting()
       })
+      .catch(() => {
+        // unreachable
+      })
     yield* output
   }
 }
@@ -48,6 +51,9 @@ function ordered<T, U>(f: F<T, U>, concurrency: number) {
       }))
       .finally(() => {
         output.closeWriting()
+      })
+      .catch(() => {
+        // unreachable
       })
     yield* unwrapIndexed(output)
   }

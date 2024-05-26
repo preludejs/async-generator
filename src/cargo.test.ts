@@ -6,7 +6,9 @@ test('cargo', async () => {
   const ops: { op: '<-' | '->', indices: number[] }[] = []
   await G.pipe(
     G.ofInterval(interval),
-    G.tap(({ index }) => void ops.push({ op: '<-', indices: [ index ] })),
+    G.tap(({ index }) => {
+      ops.push({ op: '<-', indices: [ index ] })
+    }),
     G.take(10),
     G.cargo(),
     G.consume(async values => {

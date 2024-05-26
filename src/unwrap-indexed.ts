@@ -10,7 +10,7 @@ export async function* unwrapIndexed<T>(values: AsyncIterable<{ value: T, index:
       j++
     }
   }
-  if (map.size) {
+  if (map.size > 0) {
     throw new Error(`Invalid 0-based indices, didn't see index ${j}.`)
   }
 }

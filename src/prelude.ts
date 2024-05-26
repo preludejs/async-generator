@@ -17,10 +17,10 @@ export type TypePredicate<T, U extends T> =
   (value: T, index: number) =>
     value is U
 
-export type AnyPredicate<T> =
+export type AnyPredicate<T, U extends T = T> =
   | Predicate<T>
   | AsyncPredicate<T>
-  | TypePredicate<T, any>
+  | TypePredicate<T, U>
 
 export type Producer<T> =
   () =>

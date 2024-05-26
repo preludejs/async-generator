@@ -1,5 +1,6 @@
 import type { Transformer } from './prelude.js'
 
+// eslint-disable-next-line require-yield
 async function* cycleZero(values: AsyncIterable<unknown>) {
   for await (const _value of values) {
     return

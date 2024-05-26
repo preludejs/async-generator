@@ -14,6 +14,9 @@ export function window<T>(n: number, yieldsShorter = false) {
           // fallthrough
         case n:
           yield range.slice()
+          break
+        default:
+          // noop
       }
     }
     if (range.length < n && yieldsShorter) {

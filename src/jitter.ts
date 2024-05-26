@@ -6,7 +6,7 @@ export function jitter<T>(jitter_: number, delay = 0): Transformer<T> {
   return async function* (values) {
     for await (const value of values) {
       yield value
-      await sleep(delay + Math.random() * jitter_) // NOSONAR
+      await sleep(delay + (Math.random() * jitter_))
     }
   }
 }

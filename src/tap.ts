@@ -30,6 +30,9 @@ function concurrentTap<T>(
       .finally(() => {
         output.closeWriting()
       })
+      .catch(() => {
+        // unreachable
+      })
     yield* output
   }
 }
