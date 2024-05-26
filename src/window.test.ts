@@ -4,11 +4,11 @@ test('window', async () => {
   await expect(G.pipe(
     G.range(1, 5),
     G.window(2),
-    G.array,
+    G.array
   )).resolves.toEqual([
-    [1, 2],
-    [2, 3],
-    [3, 4],
-    [4, 5]
+    [ 1, 2 ],
+    [ 2, 3 ],
+    [ 3, 4 ],
+    [ 4, 5 ]
   ])
 })

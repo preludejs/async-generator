@@ -9,7 +9,7 @@ export function cartesianProduct<T, U extends undefined | AsyncIterable<unknown>
     const values_ = otherValues ? values : otherValues_
     for await (const value of values_) {
       for (const otherValue of otherValues_) {
-        yield [value, otherValue] as [T, U extends undefined ? T : AsyncIterated<U>]
+        yield [ value, otherValue ] as [T, U extends undefined ? T : AsyncIterated<U>]
       }
     }
   }

@@ -8,7 +8,7 @@ test('ordered', async () => {
       { index: 1, value: 'c' }
     ]),
     G.unwrapIndexed,
-    G.array,
+    G.array
   )).resolves.toEqual([
     'b',
     'c',
@@ -24,7 +24,7 @@ test('ordered with invalid 0-based indices', async () => {
       { index: 3, value: 'c' }
     ]),
     G.unwrapIndexed,
-    G.array,
+    G.array
   )).rejects.toThrow('Invalid 0-based indices, didn\'t see index 0.')
 
   await expect(G.pipe(
@@ -34,6 +34,6 @@ test('ordered with invalid 0-based indices', async () => {
       { index: 3, value: 'c' }
     ]),
     G.unwrapIndexed,
-    G.array,
+    G.array
   )).rejects.toThrow('Invalid 0-based indices, didn\'t see index 2.')
 })

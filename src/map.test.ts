@@ -3,10 +3,10 @@ import sleep from './sleep.js'
 
 test('map', async () => {
   await expect(G.pipe(
-    G.ofIterable([1, 2, 3]),
+    G.ofIterable([ 1, 2, 3 ]),
     G.map(x => String(x * 2)),
     G.array
-  )).resolves.toEqual(expect.arrayContaining([ '2', '4', '6']))
+  )).resolves.toEqual(expect.arrayContaining([ '2', '4', '6' ]))
 })
 
 test('concurrent map', async () => {
