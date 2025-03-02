@@ -12,7 +12,9 @@
 [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=preludejs_async-generator&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=preludejs_async-generator)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=preludejs_async-generator&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=preludejs_async-generator)
 
-A comprehensive utility library for working with asynchronous generators in TypeScript.
+A comprehensive utility library for working with asynchronous generators in TypeScript. This package provides a rich set of composable functions that simplify complex asynchronous data processing workflows, following functional programming principles.
+
+This library empowers developers to efficiently handle streaming data, implement backpressure, process items concurrently, and transform async data flows with minimal boilerplate. From basic operations like mapping, filtering, and reducing to advanced patterns like batching, windowing, and controlled concurrency, @prelude/async-generator offers a consistent API that makes working with asynchronous sequences as intuitive as working with arrays. The fully typed implementation ensures type safety throughout your async processing pipelines.
 
 ## Installation
 
