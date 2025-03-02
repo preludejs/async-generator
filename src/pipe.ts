@@ -1,5 +1,24 @@
 type Z<A, B> = (a: A) => B
 
+/**
+ * Composes functions from left to right.
+ *
+ * @description Takes a value and pipes it through a series of functions.
+ * Each function takes the output of the previous function as its input.
+ *
+ * @example
+ * ```ts
+ * pipe(
+ *   G.ofIterable([1, 2, 3]),
+ *   G.map(x => x * 2),
+ *   G.filter(x => x > 2),
+ *   G.array
+ * ) // => Promise<[4, 6]>
+ * ```
+ *
+ * @param a - The initial value to pipe through the functions
+ * @returns The result of applying all functions in sequence
+ */
 export function pipe<A>(a: A): A
 export function pipe<A, B>(a: A, b: Z<A, B>): B
 export function pipe<A, B, C>(a: A, b: Z<A, B>, c: Z<B, C>): C

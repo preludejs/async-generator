@@ -12,17 +12,55 @@
 [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=preludejs_async-generator&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=preludejs_async-generator)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=preludejs_async-generator&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=preludejs_async-generator)
 
-# Usage
+A comprehensive utility library for working with asynchronous generators in TypeScript.
+
+## Installation
 
 ```bash
 npm i -E @prelude/async-generator
 ```
 
+## Usage
+
 ```ts
 import * as G from '@prelude/async-generator'
 ```
 
-# License
+## API Reference
+
+- **append**: Appends values from an iterable after the original async iterable values
+- **areUnique**: Checks if all values in an async iterable are unique
+- **array**: Collects all values from an async iterable into an array
+- **assign**: Mutates objects by assigning properties from a function result
+- **batch**: Groups values from an async iterable into fixed-size batches
+- **cargo**: Accumulates values into dynamic batches based on processing timing
+- **compact**: Filters out null and undefined values from an async iterable
+- **concat**: Combines multiple async iterables sequentially into a single async generator
+- **consume**: Processes all values from an async iterable for side effects
+- **count**: Counts elements in an async iterable that satisfy a predicate
+- **cycle**: Repeats values from an async iterable a specified number of times
+- **every**: Checks if all values in an async iterable satisfy a predicate
+- **filter**: Creates a transformer that only yields values passing a predicate test
+- **jitter**: Adds random time delays between yielded values
+- **map**: Applies a mapping function to each value, with support for concurrency
+- **ofInterval**: Creates an async generator that yields timestamps at regular intervals
+- **ofIterable**: Converts any synchronous iterable into an async generator
+- **ofNext**: Creates an async generator based on a provided next function
+- **unwrapIndexed**: Restores original order of values based on their indices
+- **pipe**: Composes functions from left to right for serial transformations
+- **prepend**: Yields values from an iterable before the original async iterable values
+- **range**: Creates an async generator yielding a sequence of numbers
+- **reduce**: Reduces values from an async iterable to a single result
+- **skip**: Skips the first n values from an async iterable and yields the rest
+- **some**: Checks if at least one value in an async iterable satisfies a predicate
+- **step**: Yields every nth value from an async iterable
+- **take**: Limits the number of values yielded from an async iterable
+- **tap**: Applies a side-effect function to each value without changing them
+- **window**: Creates sliding windows of values from an async iterable
+- **withIndex**: Pairs each value with its sequential index in an object
+- **yield**: Creates an async generator that yields a single value once
+
+## License
 
 ```
 MIT License
